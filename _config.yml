@@ -16,10 +16,10 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Site Title"
+title                    : "Dev DoranWorld"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : "Your Name"
+name                     : "JungHyun Lee"
 description              : "An amazing website."
 url                      : "https://DoranL.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
@@ -102,10 +102,10 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Name"
+  name             : "JungHyun Lee"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an **amazing** person."
-  location         : "Somewhere"
+  bio              : "Keyboard Warrior"
+  location         : "Republic of Korea"
   email            :
   links:
     - label: "Email"
