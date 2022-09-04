@@ -1,8 +1,11 @@
-## Dev1 캐릭터 이동 구현
+layout: single
+title: "캐릭터 이동 구현"
+
+
 
 c++ 클래스에서 Critter이라는 Pawn 클래스를 생성  
 
-Critter.h
+<Critter.h>
 
 ```c++
 UPROPERTY(EditAnywhere)
@@ -13,11 +16,11 @@ class UStaticMeshComponent* MeshComponent;
 
 UPROPERTY 속성은 아래에서 더 알아보도록 하자.  
 
-Critter.cpp
+<Critter.cpp>
 
 ```c++
-#include "Components/StaticMeshComponent.h"
-    
+#include "Components/StaticMeshComponent.h"  
+
 RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("RootComponent"));
 MeshComponent = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("MeshComponent"));
 MeshComponent->SetupAttachment(GetRootComponent());
@@ -27,7 +30,7 @@ MeshComponent->SetupAttachment(GetRootComponent());
 
 다음 해볼 것은 플레이어에게 카메라를 부착시키는 것을 해볼 것이다.  
 
-Critter.h
+<Critter.h>
 
 ```c++
 UPROPERTY(EditAnywhere)
@@ -36,7 +39,7 @@ class UCameraComponent* Camera;
 
 클래스 디폴트에서도 고칠 수 있고 월드에서도 고칠 수 있는 Camera 컴포넌트 생성  
 
-Critter.cpp
+<Critter.cpp>
 
 ```c++
 #include "Camera/CameraComponent.h"
