@@ -1,6 +1,6 @@
-## Dev1 캐릭터 이동 구현
+##Dev1 캐릭터 이동 구현
 
-c++ 클래스에서 Critter이라는 Pawn 클래스를 생성
+c++ 클래스에서 Critter이라는 Pawn 클래스를 생성  
 
 <Critter.h>
 
@@ -9,9 +9,9 @@ c++ 클래스에서 Critter이라는 Pawn 클래스를 생성
 	class UStaticMeshComponent* MeshComponent;
 ```
 
-어디서든 편집 가능한 속성이며 StaticMesh 인스턴스를 생성하는데 사용한다.
+어디서든 편집 가능한 속성이며 StaticMesh 인스턴스를 생성하는데 사용한다.  
 
-UPROPERTY 속성은 아래에서 더 알아보도록 하자.
+UPROPERTY 속성은 아래에서 더 알아보도록 하자.  
 
 <Critter.cpp>
 
@@ -23,9 +23,9 @@ UPROPERTY 속성은 아래에서 더 알아보도록 하자.
 	MeshComponent->SetupAttachment(GetRootComponent());
 ```
 
-마지막 줄을 사용하기 위해서는 "Components/StaticMeshComponent.h"를 추가해야 한다.
+마지막 줄을 사용하기 위해서는 "Components/StaticMeshComponent.h"를 추가해야 한다.  
 
-다음 해볼 것은 플레이어에게 카메라를 부착시키는 것을 해볼 것이다.
+다음 해볼 것은 플레이어에게 카메라를 부착시키는 것을 해볼 것이다.  
 
 <Critter.h>
 
@@ -34,7 +34,7 @@ UPROPERTY 속성은 아래에서 더 알아보도록 하자.
 	class UCameraComponent* Camera;
 ```
 
-클래스 디폴트에서도 고칠 수 있고 월드에서도 고칠 수 있는 Camera 컴포넌트 생성
+클래스 디폴트에서도 고칠 수 있고 월드에서도 고칠 수 있는 Camera 컴포넌트 생성  
 
 <Critter.cpp>
 
