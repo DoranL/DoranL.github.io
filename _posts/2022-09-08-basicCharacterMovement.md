@@ -198,7 +198,7 @@ __영상 볼 때 확인해야할 사항__
 
 3. 이동 애니메이션이 자연스러운지
 
-4. 캐릭터가 장해물에 가려졌을 때 캐릭터가 줌인 되어 보여지는 지
+4. 캐릭터가 장애물에 가려졌을 때 캐릭터가 줌인 되어 보여지는 지
 
    <iframe width="560" height="315" src="https://www.youtube.com/embed/2MdJDmu7BNU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
