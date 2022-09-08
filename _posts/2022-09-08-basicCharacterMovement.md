@@ -1,5 +1,5 @@
 layout: single
-title: "Dev1 Character Movement and Camera"
+title: "Dev1 Basic Character Movement"
 
 1. Camera 위치 지정 및 카메라 회전
 
@@ -41,17 +41,17 @@ SetupAttachment() 함수는 인자 하위에 위치하게 만든다.
 
 <u>FollowCamera는 컨트롤러에 따라 CameraArm 회전을 하지 않으며 CameraBoom 아래 소켓에 부착되어 있다. </u>
 
-</br> 
+<br> 
 
 ![이미지](/img/img1_2.JPG)
 
 GetCapsuleComponent()->SetCapsuleSize(17.f, 64.f);와 같이 코드를 통해 캐릭터 캡슐 크기를 변경할 수 있다.
 
-</br>
+<br>
 
 bUseControllerRotationYaw, Pitch, Roll은 카메라와 캐릭터가 동시에 회전하는 것을 막는다. 이 두개가 같이 돌아갈 경우 게임 중 캐릭터 앞 모습을 절대 볼 수 없다. 예를 들어 게임 중 앞으로 이동 중 뒤를 보는 것이 불가능하다.
 
-</br>
+<br>
 
 
 
@@ -140,13 +140,13 @@ void ANelia::LookUpAtRate(float Rate)
 
 GetCharacterMovement()->bOrientRotationToMovement = true;는 캐릭터 이동 방향에 맞춰 캐릭터를 회전 시켜주는 역할을 하며 점프 시 650만큼 위로 올라가고 중력0.2에 따라 아래로 떨어진다.
 
-</br>
+<br>
 
 ![이미지](/img/img1_3.JPG)
 
 위처럼 각각 액션매핑은 점프와 스프린트 축매핑은 W,A,S,D와 마우스 이동에 따른 화면 회전 그리고 캐릭터 이동 키 입력에 따라 이동하는 방향을 캐릭터가 바라보도록 구현했다.
 
-</br>
+<br>
 
 3. 캐릭터 애니메이션
 
@@ -158,15 +158,19 @@ GetCharacterMovement()->bOrientRotationToMovement = true;는 캐릭터 이동 �
 
 각각 스팟마다 idle, walk, run을 넣어주고 가운데 초록색 스팟을 이동시키면서 확인할 수 있다.
 
-</br>
+<br>
 
 ![이미지](/img/img1_5.JPG)
 
 MainAnim_BP는 메인 캐릭터인 Nelia의 전반적인 움직임을 나타낸 블루프린트로 idle,walk,run,sprinting,jump 각각의 기능을 나타내었다.
 
+<br>
+
 ![이미지](/img/img1_6.JPG)
 
 첫 번째로 Idle/Walk/Run(스테이트)는 앞서 만든 블렌드 스페이스를 활용하여 구현하였고 Movement Speed가 증가할 때마다 블렌드 스페이스 내 속도가 증가하여 idle,walk,run 순서대로 진행하게 한다.
+
+<br>
 
 ![이미지](/img/img1_7.JPG)
 
@@ -174,11 +178,15 @@ MainAnim_BP는 메인 캐릭터인 Nelia의 전반적인 움직임을 나타낸 
 
 두 번째는 sprinting 다운 받은 애니메이션을 연결하여 구현하였고 blendspace와 sprinting 그리고 sprinting과 blendspace 사이 조건이 존재하는데 Nelia의 Movement Status가 Sprinting일 때 상태가 sprinting으로 변하고 sprinting이 아닌 경우 다시 idle/walk/run 상태의 블렌드 스페이슬로 돌아오게 됩니다. 코드를 보면 UENUM(열겨형)으로 작성하여 MovementStatus 상태를 Normal, Sprinting, Dead 3가지 중 고를 수 있는 것을 볼 수 있다.
 
+<br>
+
 ![이미지](/img/img1_9.JPG)
 
 ![이미지](/img/img1_10.JPG)
 
 세 번째는 Jump인데 다른 것은 위 설명과 비슷하고 다른 것이 있다면 Jump는  점프 이후 모션과 착지 이후 모션의 변화가 필요하기 때문에 위 사진처럼 착지하는 시간을 확인하여 위 사진처럼 0.5보다 클 때 착지한 것으로 보고 애니메이션을 다시 Idle/Walk/Run으로 진행한다.
+
+<br>
 
 __영상 볼 때 확인해야할 사항__
 
