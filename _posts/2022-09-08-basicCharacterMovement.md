@@ -1,5 +1,7 @@
+---
 layout: single
 title: "Dev1 Basic Character Movement"
+---
 
 1. Camera 위치 지정 및 카메라 회전
 
