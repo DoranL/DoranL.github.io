@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "캐릭터 이동, 애니메이션"	
+title: "Character Movement and Animation"	
 ---
 
 
