@@ -5,7 +5,7 @@ title: "Character"
 
 캐릭터이동 
 
-<br>
+<br/>
 
 Nelia.cpp
 
@@ -128,13 +128,13 @@ void ANelia::StopJumping()
 
 Nelia 카메라와 설정과 변수 초기화 부분
 
-<br>
+<br/>
 
 ![이미지](/img/img1_1.JPG)
 
 이미지를 보면 Nelia의 Capsule Component의 자식으로 Camera Boom 그 자식으로 Follow Camera가 있는 것을 볼 수 있습니다.
 
-<br>
+<br/>
 
 ```c++
 void ANelia::Tick(float DeltaTime)
@@ -253,7 +253,7 @@ void ANelia::Tick(float DeltaTime)
 
 Nelia의 Stamina 상태에 따른 움직임 지정하는 부분
 
-<br>
+<br/>
 
 ![이미지](/img/img_stamina.JPG)
 
@@ -263,7 +263,7 @@ Nelia의 Stamina 상태에 따른 움직임 지정하는 부분
 
 가려져서 잘 보이지는 않지만 좌측 상단에 3가지 stamina 상태를 볼 수 있습니다. 
 
-<br>
+<br/>
 
 ![이미지](/img/img_staminaHUD.JPG)
 
@@ -271,7 +271,7 @@ Nelia의 Stamina 상태에 따른 움직임 지정하는 부분
 
 크기를 지정해줍니다.
 
-<br>
+<br/>
 
 ![이미지](/img/img_staminaBP.JPG)
 
@@ -279,7 +279,7 @@ Nelia의 Stamina 상태에 따른 움직임 지정하는 부분
 
 스태미나바 색상을 다르게 설정해주었습니다.
 
-<br>
+<br/>
 
 ```c++
 	//적을 바라보고 있고 전투대상이 있으면 실행되고 
@@ -511,13 +511,13 @@ void ANelia::AttackEnd()
 
 프로젝트세팅 입력창에서 설정해준 액션 매핑과 축 매핑 W,S키처럼 Scalse을 1.0과 -1.0으로 설정해두고 코드에서 Value 값을 통해 값을 전달하여 이동한다.
 
-<br>
+<br/>
 
 ![이미지](/img/img_NeliaLocomotion.JPG)
 
 블루프린트를 통해 sprint, jump, 무장을 한 상태의 스프린트와 달리기 등을 구현하였습니다.
 
-<br>
+<br/>
 
 ![이미지](/img/img_combatmontage.JPG)
 
@@ -527,7 +527,7 @@ Montage를 만들어 공격 모션 3가지를 넣고 각각 칼을 휘두를 타
 
 그리고 공격, 그리고 죽음이 끝나는 시점에는 EndAttacking, DeathEnd를 넣어 애니메이션이 끝났음을 알렸습니다.
 
-<br>
+<br/>
 
 Nelia.h
 
@@ -753,7 +753,7 @@ public:
 };
 ```
 
-<br>
+<br/>
 
 캐릭터 구현 유투브 영상
 
