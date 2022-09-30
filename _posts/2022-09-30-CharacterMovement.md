@@ -267,17 +267,13 @@ Nelia의 Stamina 상태에 따른 움직임 지정하는 부분
 
 ![이미지](/img/img_staminaHUD.JPG)
 
-왼쪽 빨강색 박스가 체력 파랑색 박스가 스태미나 박스이고 우측 박스 슬롯을 통해 체력,스태미나 박스 위치, 
-
-크기를 지정해줍니다.
+왼쪽 빨강색 박스가 체력 파랑색 박스가 스태미나 박스이고 우측 박스 슬롯을 통해 체력,스태미나 박스 위치,  크기를 지정해줍니다.
 
 <br/>
 
 ![이미지](/img/img_staminaBP.JPG)
 
-이미지에서 볼 수 있듯이 스태미나가 Normal, BelowMinimum, Exhausted, Exhausted Recovering 상태에 따라 
-
-스태미나바 색상을 다르게 설정해주었습니다.
+이미지에서 볼 수 있듯이 스태미나가 Normal, BelowMinimum, Exhausted, Exhausted Recovering 상태에 따라 스태미나바 색상을 다르게 설정해주었습니다.
 
 <br/>
 
@@ -507,7 +503,7 @@ void ANelia::AttackEnd()
 
 적 방향으로 보간하는 함수와 사용자에게 입력 받은 키에 따라 함수 호출을 하는 부분
 
-![이미지](/img/img1_3/JPG)
+![이미지](/img/img1_3.JPG)
 
 프로젝트세팅 입력창에서 설정해준 액션 매핑과 축 매핑 W,S키처럼 Scalse을 1.0과 -1.0으로 설정해두고 코드에서 Value 값을 통해 값을 전달하여 이동한다.
 
