@@ -251,8 +251,6 @@ void ANelia::Tick(float DeltaTime)
 		;
 
 	}	
-
-
 ```
 
 Nelia의 Stamina 상태에 따른 움직임 지정하는 부분
