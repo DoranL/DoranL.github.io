@@ -1,7 +1,6 @@
 ---
 layout: single
 title: "Character"
-published: true
 ---
 
 캐릭터이동 
