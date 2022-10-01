@@ -5,8 +5,6 @@ title: "Character"
 
 캐릭터이동 
 
-<br/>
-
 Nelia.cpp
 
 ```c++
@@ -502,6 +500,8 @@ void ANelia::AttackEnd()
 ```
 
 적 방향으로 보간하는 함수와 사용자에게 입력 받은 키에 따라 함수 호출을 하는 부분
+
+<br/>
 
 ![이미지](/img/img1_3.JPG)
 
