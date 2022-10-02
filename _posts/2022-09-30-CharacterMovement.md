@@ -3,9 +3,9 @@ layout: single
 title: "Character"
 ---
 
-캐릭터이동 
+메인 캐릭터의 이동, 애니메이션, UI 등을 구현해보자
 
-Nelia.cpp
+Nelia.cpp - 
 
 ```c++
 #include "Nelia.h"
@@ -130,9 +130,15 @@ Nelia 카메라와 설정과 변수 초기화 부분
 
 ![이미지](/img/img1_1.JPG)
 
-이미지를 보면 Nelia의 Capsule Component의 자식으로 Camera Boom 그 자식으로 Follow Camera가 있는 것을 볼 수 있습니다.
+이미지를 보면 Nelia의 Capsule Component의 자식으로 Camera Boom 그 자식으로 Follow Camera가 있는 것을 볼 수 있다.
 
 <br/>
+
+***
+
+Nelia.cpp
+
+Nelia의 Stamina 상태에 따른 움직임 지정하는 부분 Left Shift를 누를 시 Tick 함수 내부에 있기 때문에 매 프레임마다 스태미나가 감소되고 버튼을 안 누르면 증가된다.  Max Stamina를 150.f로 해두었기 때문에 150까지 증가한다.
 
 ```c++
 void ANelia::Tick(float DeltaTime)
@@ -245,11 +251,8 @@ void ANelia::Tick(float DeltaTime)
 
 	default:
 		;
-
 	}	
 ```
-
-Nelia의 Stamina 상태에 따른 움직임 지정하는 부분
 
 <br/>
 
@@ -259,7 +262,7 @@ Nelia의 Stamina 상태에 따른 움직임 지정하는 부분
 
 ![이미지](/img/img_stamina1.JPG)
 
-가려져서 잘 보이지는 않지만 좌측 상단에 3가지 stamina 상태를 볼 수 있습니다. 
+가려져서 잘 보이지는 않지만 좌측 상단에 3가지 stamina 상태를 볼 수 있다.
 
 <br/>
 
@@ -274,6 +277,12 @@ Nelia의 Stamina 상태에 따른 움직임 지정하는 부분
 이미지에서 볼 수 있듯이 스태미나가 Normal, BelowMinimum, Exhausted, Exhausted Recovering 상태에 따라 스태미나바 색상을 다르게 설정해주었습니다.
 
 <br/>
+
+***
+
+Nelia.cpp 
+
+전투 시 적 방향을 바라보게 하는 보간 기능을 수행하는 코드
 
 ```c++
 	//적을 바라보고 있고 전투대상이 있으면 실행되고 
@@ -304,7 +313,17 @@ FRotator ANelia::GetLookAtRotationYaw(FVector Target)
 	FRotator LookAtRotationYaw(0.f, LookAtRotation.Yaw, 0.f);
 	return LookAtRotationYaw;
 }
+```
 
+<br/>
+
+***
+
+Nelia.cpp 
+
+플레이어에게 입력 키를 받아 각 함수를 호출함
+
+```c++
 // Called to bind functionality to input
 void ANelia::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
@@ -406,6 +425,30 @@ void ANelia::PickupReleas()
 	bPickup = false;
 }
 
+void ANelia::ShiftKeyDown()
+{
+	bShiftKeyDown = true;
+}
+
+void ANelia::ShiftKeyUp()
+{
+	bShiftKeyDown = false;
+}
+```
+
+<br/>
+
+![이미지](/img/img1_3.JPG)
+
+프로젝트세팅 입력창에서 설정해준 액션 매핑과 축 매핑 W,S키처럼 Scalse을 1.0과 -1.0으로 설정해두고 코드에서 Value 값을 통해 값을 전달하여 이동한다.
+
+***
+
+
+
+Nelia.cpp
+
+```c++
 //CombatMontage를 1.2배 속도로 애니메이션을 실행하고 CombatMontage의 몽타주 섹션 Death 부분으로 이동
 void ANelia::Die()
 {
@@ -438,16 +481,6 @@ void ANelia::SetMovementStatus(EMovementStatus Status)
 	{
 		GetCharacterMovement()->MaxWalkSpeed = Speed;
 	}
-}
-
-void ANelia::ShiftKeyDown()
-{
-	bShiftKeyDown = true;
-}
-
-void ANelia::ShiftKeyUp()
-{
-	bShiftKeyDown = false;
 }
 
 //공격 중인 상태가 아니고 죽지 않았을 때 적 방향을 바라보고 Nelia의 AnimInstance를 가져옴
@@ -499,19 +532,11 @@ void ANelia::AttackEnd()
 }
 ```
 
-적 방향으로 보간하는 함수와 사용자에게 입력 받은 키에 따라 함수 호출을 하는 부분
-
-<br/>
-
-![이미지](/img/img1_3.JPG)
-
-프로젝트세팅 입력창에서 설정해준 액션 매핑과 축 매핑 W,S키처럼 Scalse을 1.0과 -1.0으로 설정해두고 코드에서 Value 값을 통해 값을 전달하여 이동한다.
-
 <br/>
 
 ![이미지](/img/img_NeliaLocomotion.JPG)
 
-블루프린트를 통해 sprint, jump, 무장을 한 상태의 스프린트와 달리기 등을 구현하였습니다.
+블루프린트를 통해 sprint, jump, 무장을 한 상태의 스프린트와 달리기 등을 구현함
 
 <br/>
 
@@ -519,13 +544,19 @@ void ANelia::AttackEnd()
 
 ![이미지](/img/img_NeliaAnim.JPG)
 
-Montage를 만들어 공격 모션 3가지를 넣고 각각 칼을 휘두를 타이밍에 맞춰 시작 타이밍에 ActivateCollision을 끝나는 타이밍에는 DeactivateCollision을 넣어줘 칼에 장착해둔 콜리전을 활성화 비활성화 시켜주었습니다. 
+Montage를 만들어 공격 모션 3가지를 넣고 각각 칼을 휘두를 타이밍에 맞춰 시작 타이밍에 ActivateCollision을 끝나는 타이밍에는 DeactivateCollision을 넣어줘 칼에 장착해둔 콜리전을 활성화 비활성화 시켜줬다.
 
-그리고 공격, 그리고 죽음이 끝나는 시점에는 EndAttacking, DeathEnd를 넣어 애니메이션이 끝났음을 알렸습니다.
+그리고 공격, 그리고 죽음이 끝나는 시점에는 EndAttacking, DeathEnd를 넣어 애니메이션이 끝났음을 알렸다.
+
+***
+
+
 
 <br/>
 
 Nelia.h
+
+동작 상태와 스태미나 상태를 열거형으로 선언하여 블루프린터에서 보면 드롭다운 형식으로 선택 가능한 것을 볼 수 있음
 
 ```c++
 // Fill out your copyright notice in the Description page of Project Settings.
@@ -749,7 +780,13 @@ public:
 };
 ```
 
+***
+
+
+
 <br/>
+
+
 
 캐릭터 구현 유투브 영상
 
