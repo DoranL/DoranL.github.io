@@ -5,7 +5,9 @@ title: "Character"
 
 메인 캐릭터의 이동, 애니메이션, UI 등을 구현해보자
 
-Nelia.cpp - 
+Nelia.cpp
+
+Nelia 카메라와 설정과 변수 초기화 부분
 
 ```c++
 #include "Nelia.h"
@@ -124,13 +126,13 @@ void ANelia::StopJumping()
 }
 ```
 
-Nelia 카메라와 설정과 변수 초기화 부분
-
 <br/>
 
 ![이미지](/img/img1_1.JPG)
 
-이미지를 보면 Nelia의 Capsule Component의 자식으로 Camera Boom 그 자식으로 Follow Camera가 있는 것을 볼 수 있다.
+이미지를 보면 Nelia의 Capsule Component의 자식으로 Camera Boom 그 자식으로 
+
+Follow Camera가 있는 것을 볼 수 있다.
 
 <br/>
 
@@ -138,7 +140,11 @@ Nelia 카메라와 설정과 변수 초기화 부분
 
 Nelia.cpp
 
-Nelia의 Stamina 상태에 따른 움직임 지정하는 부분 Left Shift를 누를 시 Tick 함수 내부에 있기 때문에 매 프레임마다 스태미나가 감소되고 버튼을 안 누르면 증가된다.  Max Stamina를 150.f로 해두었기 때문에 150까지 증가한다.
+Nelia의 Stamina 상태에 따른 움직임 지정하는 부분 Left Shift를 누를 시 Tick 함수 내부에 있기 
+
+때문에 매 프레임마다 스태미나가 감소되고 버튼을 안 누르면 증가된다.  
+
+Max Stamina를 150.f로 해두었기 때문에 150까지 증가한다.
 
 ```c++
 void ANelia::Tick(float DeltaTime)
@@ -256,25 +262,29 @@ void ANelia::Tick(float DeltaTime)
 
 <br/>
 
+가려져서 잘 보이지는 않지만 좌측 상단에 3가지 stamina 상태를 볼 수 있다.
+
 ![이미지](/img/img_stamina.JPG)
 
 ![이미지](/img/img_stamina2.JPG)
 
 ![이미지](/img/img_stamina1.JPG)
 
-가려져서 잘 보이지는 않지만 좌측 상단에 3가지 stamina 상태를 볼 수 있다.
-
 <br/>
+
+왼쪽 빨강색 박스가 체력 파랑색 박스가 스태미나 박스이고 우측 박스 슬롯을 통해 체력,
+
+스태미나 박스 위치,  크기를 지정해줍니다.
 
 ![이미지](/img/img_staminaHUD.JPG)
 
-왼쪽 빨강색 박스가 체력 파랑색 박스가 스태미나 박스이고 우측 박스 슬롯을 통해 체력,스태미나 박스 위치,  크기를 지정해줍니다.
-
 <br/>
 
-![이미지](/img/img_staminaBP.JPG)
+이미지에서 볼 수 있듯이 스태미나가 Normal, BelowMinimum, Exhausted, 
 
-이미지에서 볼 수 있듯이 스태미나가 Normal, BelowMinimum, Exhausted, Exhausted Recovering 상태에 따라 스태미나바 색상을 다르게 설정해주었습니다.
+Exhausted Recovering 상태에 따라 스태미나바 색상을 다르게 설정해주었습니다.
+
+![이미지](/img/img_staminaBP.JPG)
 
 <br/>
 
@@ -438,9 +448,13 @@ void ANelia::ShiftKeyUp()
 
 <br/>
 
+프로젝트세팅 입력창에서 설정해준 액션 매핑과 축 매핑 W,S키처럼 Scalse을 1.0과 -1.0으로 
+
+설정해두고 코드에서 Value 값을 통해 값을 전달하여 이동한다.
+
 ![이미지](/img/img1_3.JPG)
 
-프로젝트세팅 입력창에서 설정해준 액션 매핑과 축 매핑 W,S키처럼 Scalse을 1.0과 -1.0으로 설정해두고 코드에서 Value 값을 통해 값을 전달하여 이동한다.
+<br/>
 
 ***
 
@@ -534,25 +548,29 @@ void ANelia::AttackEnd()
 
 <br/>
 
-![이미지](/img/img_NeliaLocomotion.JPG)
-
 블루프린트를 통해 sprint, jump, 무장을 한 상태의 스프린트와 달리기 등을 구현함
 
+![이미지](/img/img_NeliaLocomotion.JPG)
+
 <br/>
+
+Montage를 만들어 공격 모션 3가지를 넣고 각각 칼을 휘두를 타이밍에 맞춰 시작 타이밍에 ActivateCollision을 끝나는 타이밍에는 DeactivateCollision을 넣어줘 칼에 장착해둔 콜리전을 
+
+활성화 비활성화 시켜줬다.
+
+그리고 공격, 그리고 죽음이 끝나는 시점에는 EndAttacking, DeathEnd를 넣어 애니메이션이 
+
+끝났음을 알렸다.
 
 ![이미지](/img/img_combatmontage.JPG)
 
 ![이미지](/img/img_NeliaAnim.JPG)
 
-Montage를 만들어 공격 모션 3가지를 넣고 각각 칼을 휘두를 타이밍에 맞춰 시작 타이밍에 ActivateCollision을 끝나는 타이밍에는 DeactivateCollision을 넣어줘 칼에 장착해둔 콜리전을 활성화 비활성화 시켜줬다.
-
-그리고 공격, 그리고 죽음이 끝나는 시점에는 EndAttacking, DeathEnd를 넣어 애니메이션이 끝났음을 알렸다.
+<br/>
 
 ***
 
 
-
-<br/>
 
 Nelia.h
 
