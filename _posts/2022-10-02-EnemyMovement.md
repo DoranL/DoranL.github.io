@@ -3,7 +3,7 @@ layout: single
 title: "Enemy"
 ---
 
-Enemy 구현
+이번에는 Enemy 구현 코드를 설명하겠습니다.
 
 Enemy.cpp
 

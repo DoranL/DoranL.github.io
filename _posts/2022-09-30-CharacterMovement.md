@@ -5,6 +5,10 @@ title: "Character"
 
 메인 캐릭터의 이동, 애니메이션, UI 등을 구현해보자
 
+***
+
+
+
 Nelia.cpp
 
 Nelia 카메라와 설정과 변수 초기화 부분
@@ -128,11 +132,11 @@ void ANelia::StopJumping()
 
 <br/>
 
+이미지를 보면 Nelia의 Capsule Component의 자식으로 Camera Boom 
+
+그 자식으로 Follow Camera가 있는 것을 볼 수 있다.
+
 ![이미지](/img/img1_1.JPG)
-
-이미지를 보면 Nelia의 Capsule Component의 자식으로 Camera Boom 그 자식으로 
-
-Follow Camera가 있는 것을 볼 수 있다.
 
 <br/>
 
