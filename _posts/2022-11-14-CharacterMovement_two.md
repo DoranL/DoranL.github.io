@@ -19,17 +19,21 @@ title: "DEV2 캐릭터 이동 2편"
 
 <br/>
 
-이번 장은 캐릭터 이동 마지막 편으로 구르기, 줍기, 기본 공격, 카메라 상하좌우 전환을 구현하도록 하겠습니다.
+이번 장은 캐릭터 이동 마지막 편으로 구르기, 줍기, 기본 공격, 카메라 상하좌우 전환을 
 
-TMI이긴 하지만 PELIA 등 뒤에는 애니메이션을 보니까 포탈로 사용 가능한 원형 물체가 달려있는 데 엔딩쯤에 
+구현하도록 하겠습니다.
 
-이 포탈을 사용하여 PELIA가 모시는 신인 시뮬라크르를 엔딩 창에 모셔오는 것을 구현해 볼 예정입니다.
+TMI이긴 하지만 PELIA 등 뒤에는 애니메이션을 보니까 포탈로 사용 가능한 
 
-![이미지](/img/pelia.JPG)
+원형 물체가 달려있는 데 엔딩쯤에 이 포탈을 사용하여 PELIA가 모시는 신인 
 
-<br/>
+시뮬라크르를 엔딩 창에 모셔오는 것을 구현해 볼 예정입니다.
+
+![이미지](/img/peliabeck.JPG)
 
 이번 장에서 다루는 기능들은 비교적 코드가 짧습니다.
+
+<br/>
 
 <mark>구르기</mark>
 
@@ -152,15 +156,17 @@ void ANelia::Roll()
 
 구르기 2에서 이미 올렸습니다. 
 
-추가적으로 해당 게임에서 G키와 왼쪽 마우스를 통해 줍기와 기본 공격이 가능하도록 설정하였기 때문에 Pickup 하나의 액션 매핑에 2개의 키를 넣어주었습니다.
+추가적으로 해당 게임에서 G키와 왼쪽 마우스를 통해 줍기와 기본 공격이 가능하도록 
+
+설정하였기 때문에 Pickup 하나의 액션 매핑에 2개의 키를 넣어주었습니다.
 
 <br/>
 
 줍기 3.
 
-아래 사진에서 노란색 콜리전 안에서 플레이어가 G키 또는 왼쪽 마우스를 클릭했을 경우 플레이어 오른쪽 손에 
+아래 사진에서 노란색 콜리전 안에서 플레이어가 G키 또는 왼쪽 마우스를 클릭했을 경우 플레이어 
 
-부착해둔 RightHandSocket에 무기가 장착되도록 구현되었습니다.
+오른쪽 손에 부착해둔 RightHandSocket에 무기가 장착되도록 구현되었습니다.
 
 ![이미지](/img/collisonweapon.JPG)
 
@@ -225,7 +231,9 @@ void ANelia::PickupReleas()
 
 기본공격 1.
 
-rollmontage와 마찬가지로 공격 종료 시점을 EndAttacking을 통해 알려주고 가만히 있는데 적이 칼에 다았다고 데미지가 들어가면 안 되기 때문에 ActivateCollision과 DeactivateCollison을 사용하여 활성/비활성화를 시켜줌
+rollmontage와 마찬가지로 공격 종료 시점을 EndAttacking을 통해 알려주고 가만히 있는데 적이 칼에 다았다고 데미지가 들어가면 안 되기 때문에 ActivateCollision과 DeactivateCollison을 
+
+사용하여 활성/비활성화를 시켜주었습니다.
 
 ![이미지](/img/attackmontage.JPG)
 
@@ -263,7 +271,9 @@ UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Anims")
 
 <br/>
 
-구현하고 싶은 기본 스킬 동작 방식이  천천히 공격 버튼을 계속해서 누를 경우 1번 동작만 반복을 하고 빠르게 누르면 1,2 또는 1,2,3 동작을 하도록 구현하기 위해 resetcombo와 savecombo를 사용 
+구현하고 싶은 기본 스킬 동작 방식이  천천히 공격 버튼을 계속해서 누를 경우 1번 동작만 반복을 하고 빠르게 누르면 1,2 또는 1,2,3 동작을 하도록 구현하기 위해 resetcombo와 savecombo를  
+
+사용하였습니다.
 
 ```c++
 //공격 중인 상태가 아니고 죽지 않았을 때 적 방향을 바라보고 Nelia의 AnimInstance를 가져옴
@@ -340,9 +350,9 @@ void ANelia::SaveComboAttack()
 
 <br/>
 
-위에서 설명했던 것처럼 스킬마다 savecombo와 resetcombo를 간격을 두고 지정해두고 스킬 사용 이후 다시 
+위에서 설명했던 것처럼 스킬마다 savecombo와 resetcombo를 간격을 두고 지정해두고 
 
-키를 누르는 시간에 따라 1, 2, 3번 기본 공격 모션을 하도록 구현
+스킬 사용 이후 다시  키를 누르는 시간에 따라 1, 2, 3번 기본 공격 모션을 하도록 구현
 
 ![이미지](/img/saveattack.JPG)
 
@@ -408,9 +418,9 @@ void ANelia::LookUp(float Value)
 
 <br/>
 
-PELIA 400만큼 거리 뒤에 Cameraboom을 부착하고 플레이어가 돌면 카메라도 플레이어를 
+PELIA 400만큼 거리 뒤에 Cameraboom을 부착하고 플레이어가 돌면 카메라도 
 
-기준으로 회전하도록 설정
+플레이어를 기준으로 회전하도록 설정
 
 ![이미지](/img/cameraboom.JPG)
 
