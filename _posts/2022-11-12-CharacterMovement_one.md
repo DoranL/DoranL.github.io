@@ -3,7 +3,7 @@ layout: single
 title: "DEV1 캐릭터 이동 1편"
 ---
 
-<span style = "color:red">캐릭터 이동1편 내용 정리</span>
+<span style = "color:green">캐릭터 이동1편 내용 정리</span>
 
 ***
 
@@ -16,8 +16,6 @@ title: "DEV1 캐릭터 이동 1편"
 ***
 
 <br/>
-
-***
 
 ***
 
@@ -37,7 +35,7 @@ title: "DEV1 캐릭터 이동 1편"
 
    필요한 함수로 이동하도록 바인딩 해주는 과정이 필요
 
-3. DEV4에서 다룰 내용인 Blendspace와 Animation blueprint를 사용
+3. DEV3에서 다룰 내용인 Blendspace와 Animation blueprint를 사용
 
 <br/>
 
@@ -285,7 +283,7 @@ switch (StaminaStatus)
 	}	
 ```
 
- 스태미나 상태에 따른 HUD 변화는 DEV5에서 다루도록 하겠습니다.
+ 스태미나 상태에 따른 HUD 변화는 DEV4에서 다루도록 하겠습니다.
 
 <br/>
 
@@ -293,9 +291,9 @@ switch (StaminaStatus)
 
 자막과 음성이 없고 해상도가 1080p이 최대라서 그런지 조금 깨지는 게 아쉽지만
 
-이번 DEV1에서 다룬 것들을 영상으로 올리니까 위에 빨간색 글씨로 적힌 
+이번 DEV1에서 다룬 것들을 영상으로 올리니까 위에 초록 글씨로 적힌 
 
-<span style = "color:red">캐릭터 이동1편 내용 정리</span> 부분을 참고하며 영상을 보시면 될 거 같습니다.
+<span style = "color:green">캐릭터 이동1편 내용 정리</span> 부분을 참고하며 영상을 보시면 될 거 같습니다.
 
 
 
@@ -313,4 +311,4 @@ switch (StaminaStatus)
 
 카메라 전환(오른쪽 마우스)을 추가적으로 다루겠습니다.  
 
-가능하면 DEV5에서 다루기로 한 HUD도 추가하여 블로그를 작성하도록 하겠습니다.
+가능하면 DEV4에서 다루기로 한 HUD도 추가하여 블로그를 작성하도록 하겠습니다.
