@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "DEV2 애니메이션"
+title: "DEV3 애니메이션"
 ---
 
 <span style = "color:green">캐릭터 이동2편 내용 정리</span>
