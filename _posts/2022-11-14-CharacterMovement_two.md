@@ -80,6 +80,8 @@ TMI이긴 하지만 PELIA 등 뒤에는 애니메이션을 보니까 포탈로 �
 
 ![이미지](/img/roll.JPG)
 
+<center>RollMontage 애니메이션 적용</center>
+
 ![이미지](/img/rollblueprint.JPG)
 
 <br/>
