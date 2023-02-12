@@ -1,5 +1,5 @@
 ---
-layout: single
+Dlayout: single
 title: "DEV2 캐릭터 이동 2편"
 ---
 
