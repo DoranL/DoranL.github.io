@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "DEV1 캐릭터 벽타기 4편"
+title: "DEV4 캐릭터 벽타기"
 ---
 
 <span style = "color:green">캐릭터 벽타기 내용 정리</span>
@@ -162,3 +162,5 @@ FVector LaunchVelocity;
 크게 달라지는 것은 없습니다. 
 
 ![이미지](/img/yaw.JPG)
+
+![이미지](/img/img1_3_1.JPG)
