@@ -36,7 +36,7 @@ title: "DEV4 캐릭터 벽타기"
 
 <1. 벽을 오르는 애니메이션>
 
-![이미지](/img/climb_blend.PNG)
+![이미지](/img/climb_blend.png)
 
 블렌드 스페이스를 통해 상하좌우 이동 시 애니메이션을 만들고 
 
@@ -46,7 +46,7 @@ title: "DEV4 캐릭터 벽타기"
 
 bool 변수인 isClimb을 통해 ClimbWall을 할 수 있도록 구현을 하면 된다.
 
-![이미지](/img/locomotion_clilmb.JPG)
+![이미지](/img/locomotion_clilmb.jpg)
 
 </br>
 
@@ -54,7 +54,7 @@ bool 변수인 isClimb을 통해 ClimbWall을 할 수 있도록 구현을 하면
 
 <2. 플레이어가 오를 수 있는 벽이 있는 지 확인>
 
-![이미지](/img/climb_line.PNG)
+![이미지](/img/climb_line.png)
 
 초록선은 앞에 벽이 있는 지 확인하는 선이고 빨간선은 정상에 도착 시 벽을 잡고 올라서는 애니메이션을 수행하기 
 
@@ -161,6 +161,5 @@ FVector LaunchVelocity;
 
 크게 달라지는 것은 없습니다. 
 
-![이미지](/img/yaw.JPG)
+![이미지](/img/yaw.jpg)
 
-![이미지](/img/img1_3_1.JPG)
